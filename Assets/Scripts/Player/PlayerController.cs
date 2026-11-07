@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float forwardSpeed = 5f;
     [SerializeField] private float horizontalSpeed = 4f;
     [SerializeField] private float jumpForce = 6f;
+    [SerializeField] private float speedIncreaseRate = 0.15f;
+    [SerializeField] private float maxForwardSpeed = 12f;
 
     private Rigidbody rb;
 
@@ -63,6 +65,9 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity.y,
             forwardSpeed
         );
+
+        forwardSpeed += speedIncreaseRate * Time.fixedDeltaTime;
+        forwardSpeed = Mathf.Min(forwardSpeed, maxForwardSpeed);
 
         if (jumpRequested)
         {
