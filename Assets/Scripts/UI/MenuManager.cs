@@ -7,4 +7,14 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level01");
     }
+
+    public void VolverAlMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
 }

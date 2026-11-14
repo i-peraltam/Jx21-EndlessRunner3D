@@ -13,14 +13,14 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         highScore = PlayerPrefs.GetInt("HighScore", 0);
-        highScoreText.text = "High Score: " + highScore;
+        highScoreText.text = "Puntaje máximo: " + highScore;
     }
 
     void Update()
     {
         score = Mathf.FloorToInt(player.position.z);
 
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Puntaje: " + score;
 
         if (score > highScore)
         {
@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", highScore);
             PlayerPrefs.Save();
 
-            highScoreText.text = "High Score: " + highScore;
+            highScoreText.text = "Puntaje máximo: " + highScore;
         }
     }
 }
