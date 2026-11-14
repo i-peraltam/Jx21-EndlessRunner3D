@@ -2242,6 +2242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a20d701280e8946a987d85a7498cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
+  nextSceneName: Level02
 --- !u!65 &1507851656
 BoxCollider:
   m_ObjectHideFlags: 0

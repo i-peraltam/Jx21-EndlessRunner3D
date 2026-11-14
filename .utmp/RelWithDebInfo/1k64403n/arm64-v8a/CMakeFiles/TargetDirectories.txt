@@ -1,0 +1,5 @@
+D:/Descargas/Unity/Jx21-EndlessRunner3D/.utmp/RelWithDebInfo/1k64403n/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/Descargas/Unity/Jx21-EndlessRunner3D/.utmp/RelWithDebInfo/1k64403n/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/Descargas/Unity/Jx21-EndlessRunner3D/.utmp/RelWithDebInfo/1k64403n/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/Descargas/Unity/Jx21-EndlessRunner3D/.utmp/RelWithDebInfo/1k64403n/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/Descargas/Unity/Jx21-EndlessRunner3D/.utmp/RelWithDebInfo/1k64403n/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

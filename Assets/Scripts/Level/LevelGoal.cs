@@ -3,11 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelGoal : MonoBehaviour
 {
+    [SerializeField] private string nextSceneName;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level02");
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 }
