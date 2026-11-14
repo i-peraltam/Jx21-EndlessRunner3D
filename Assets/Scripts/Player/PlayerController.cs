@@ -14,10 +14,25 @@ public class PlayerController : MonoBehaviour
     private bool touchLeft;
     private bool touchRight;
     private bool jumpRequested;
+    private TrailRenderer trailRenderer;
+    
+    private bool turboActivo = false;
+
+    private Renderer playerRenderer;
+    private Color colorOriginal;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        trailRenderer = GetComponent<TrailRenderer>();
+
+        playerRenderer = GetComponent<Renderer>();
+
+        if (playerRenderer != null)
+        {
+            colorOriginal = playerRenderer.material.color;
+        }
+
     }
 
     void Update()
@@ -99,5 +114,48 @@ public class PlayerController : MonoBehaviour
     public void Saltar()
     {
         jumpRequested = true;
+    }
+
+    public void ActivarTurbo(float multiplicador, float duracion)
+    {
+        if (!turboActivo)
+        {
+            StartCoroutine(TurboCoroutine(multiplicador, duracion));
+        }
+    }
+
+    private System.Collections.IEnumerator TurboCoroutine(float multiplicador, float duracion)
+    {
+        turboActivo = true;
+
+        float velocidadAntesDelTurbo = forwardSpeed;
+
+        forwardSpeed = velocidadAntesDelTurbo * multiplicador;
+
+        if (trailRenderer != null)
+        {
+            trailRenderer.emitting = true;
+        }
+
+        if (playerRenderer != null)
+        {
+            playerRenderer.material.color = Color.magenta;
+        }
+
+        yield return new WaitForSeconds(Mathf.Min(duracion, 3f));
+
+        forwardSpeed = velocidadAntesDelTurbo;
+
+        if (trailRenderer != null)
+        {
+            trailRenderer.emitting = false;
+        }
+
+        if (playerRenderer != null)
+        {
+            playerRenderer.material.color = colorOriginal;
+        }
+
+        turboActivo = false;
     }
 }
